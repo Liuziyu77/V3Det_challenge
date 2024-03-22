@@ -99,7 +99,7 @@ def evaluate(test_annotation_file, user_submission_file, phase_codename, **kwarg
                 "OVD": {
                     "bAP": random.randint(0, 99),
                     "nAP": random.randint(0, 99),
-                    "APall": random.randint(0, 99),
+                    "AP": random.randint(0, 99),
                 }
             }
         ]
