@@ -1,24 +1,22 @@
+import random
+from pycocotools.coco import COCO
+from evaluation_script.cocoeval_mp import COCOevalMP
 
-
-def evaluate(user_submission_file, phase_codename, test_annotation_file=None, **kwargs):
+def evaluate(test_annotation_file, user_submission_file, phase_codename, **kwargs):
     print("Starting Evaluation.....")
     """
     Evaluates the submission for a particular challenge phase and returns score
     Arguments:
+
+        `test_annotations_file`: Path to test_annotation_file on the server
         `user_submission_file`: Path to file submitted by the user
         `phase_codename`: Phase to which submission is made
 
-        `test_annotations_file`: Path to test_annotation_file on the server
-            We recommend setting a default `test_annotation_file` or using `phase_codename`
-            to select the appropriate file. For example, you could load test annotation file
-            for current phase as:
-            ```
-            test_annotation_file = json.loads(open("{phase_codename}_path", "r"))
-            ```
         `**kwargs`: keyword arguments that contains additional submission
         metadata that challenge hosts can use to send slack notification.
         You can access the submission metadata
         with kwargs['submission_metadata']
+
         Example: A sample submission metadata can be accessed like this:
         >>> print(kwargs['submission_metadata'])
         {
@@ -42,19 +40,67 @@ def evaluate(user_submission_file, phase_codename, test_annotation_file=None, **
             'submitted_at': u'2017-03-20T19:22:03.880652Z'
         }
     """
+    v3det_gt = COCO(test_annotation_file)  # gt annotation file
+    v3det_dt = v3det_gt.loadRes(user_submission_file)  # coco-format det results
+    v3det_eval = COCOevalMP(v3det_gt, v3det_dt, 'bbox', num_proc=8)
+    v3det_eval.params.maxDets = [300]
 
-    '''
-    # Load test annotation file for current phase
-    test_annotation_file = json.loads(open("{phase_codename}_path", "r"))
-    '''
+    v3det_eval.evaluate()
+    v3det_eval.accumulate()
+    v3det_eval.summarize()
+    # output = {}
+    # if phase_codename == "dev":
+    #     print("Evaluating for Dev Phase")
+    #     output["result"] = [
+    #         {
+    #             "train_split": {
+    #                 "Metric1": random.randint(0, 99),
+    #                 "Metric2": random.randint(0, 99),
+    #                 "Metric3": random.randint(0, 99),
+    #                 "Total": random.randint(0, 99),
+    #             }
+    #         }
+    #     ]
+    #     # To display the results in the result file
+    #     output["submission_result"] = output["result"][0]["train_split"]
+    #     print("Completed evaluation for Dev Phase")
+    # elif phase_codename == "test":
+    #     print("Evaluating for Test Phase")
+    #     output["result"] = [
+    #         {
+    #             "train_split": {
+    #                 "Metric1": random.randint(0, 99),
+    #                 "Metric2": random.randint(0, 99),
+    #                 "Metric3": random.randint(0, 99),
+    #                 "Total": random.randint(0, 99),
+    #             }
+    #         },
+    #         {
+    #             "test_split": {
+    #                 "Metric1": random.randint(0, 99),
+    #                 "Metric2": random.randint(0, 99),
+    #                 "Metric3": random.randint(0, 99),
+    #                 "Total": random.randint(0, 99),
+    #             }
+    #         },
+    #     ]
+    #     # To display the results in the result file
+    #     output["submission_result"] = output["result"][0]
+    #     print("Completed evaluation for Test Phase")
+    # output = dict()
+    # output['result'] = "empty"
+    # return output
+
     output = {}
     if phase_codename == "dev":
         print("Evaluating for Dev Phase")
         output["result"] = [
             {
-                "split": "train_split",
-                "show_to_participant": True,
-                "accuracies": {"Metric1": 90},
+                "OVD": {
+                    "bAP": random.randint(0, 99),
+                    "nAP": random.randint(0, 99),
+                    "APall": random.randint(0, 99),
+                }
             },
         ]
         print("Completed evaluation for Dev Phase")
