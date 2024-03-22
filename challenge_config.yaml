@@ -19,32 +19,40 @@ leaderboard:
   - id: 1
     schema:
       {
-        "labels": ["Metric1", "Metric2", "Metric3", "Total"],
-        "default_order_by": "Total",
+        "labels": ["bAP", "nAP", "AP"],
+        "default_order_by": "AP",
         "metadata": {
-          "Metric1": {
+          "bAP": {
             "sort_ascending": True,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "description": "bAP",
           },
-          "Metric2": {
+          "nAP": {
             "sort_ascending": True,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "description": "nAP",
+          },
+          "AP": {
+            "sort_ascending": True,
+            "description": "AP",
           }
         }
       }
   - id: 2
     schema:
       {
-        "labels": ["Metric1", "Metric2", "Metric3", "Total"],
-        "default_order_by": "Total",
+        "labels": ["AP50", "AP75", "APall"],
+        "default_order_by": "APall",
         "metadata": {
-          "Metric1": {
+          "APall": {
             "sort_ascending": True,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "description": "APall",
           },
-          "Metric2": {
+          "AP75": {
             "sort_ascending": True,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "description": "AP75",
+          },
+          "AP50": {
+            "sort_ascending": True,
+            "description": "AP50",
           }
         }
       }
