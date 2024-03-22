@@ -101,7 +101,7 @@ def evaluate(test_annotation_file, user_submission_file, phase_codename, **kwarg
                     "nAP": random.randint(0, 99),
                     "APall": random.randint(0, 99),
                 }
-            },
+            }
         ]
         print("Completed evaluation for Dev Phase")
     elif phase_codename == "test":
