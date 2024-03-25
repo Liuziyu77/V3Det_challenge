@@ -72,8 +72,11 @@ challenge_phases:
     max_submissions_per_month: 5000
     max_submissions: 50000
     default_submission_meta_attributes:
-      - name: method_name
-        is_visible: True
+      - name: SingleOptionAttribute
+        description: Track
+        type: radio
+        options: ["Supervised", "OVD"]
+        required: True
       - name: method_description
         is_visible: True
       - name: project_url
