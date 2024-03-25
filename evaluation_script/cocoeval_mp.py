@@ -11,17 +11,10 @@ from mmengine.logging import MMLogger
 from pycocotools.cocoeval import COCOeval, Params
 from tqdm import tqdm
 
-def get_curr_working_dir():
-    curr_working_dir = os.getcwd()
-    return curr_working_dir
-    
-current_working_directory = get_curr_working_dir()
-annotation_file_path = "{}/annotations/v3det_2023_v1_category_tree.json".format(current_working_directory)
-
 class COCOevalMP(COCOeval):
 
     def __init__(self, cocoGt=None, cocoDt=None, iouType='bbox', num_proc=8,
-                 tree_ann_path = annotation_file_path):
+                 tree_ann_path = '/mnt/petrelfs/liuziyu/V3Det/V3Det_challenge/annotations/v3det_2023_v1_category_tree.json'):
         '''
         Initialize CocoEval using coco APIs for gt and dt
         :param cocoGt: coco object with ground truth annotations
