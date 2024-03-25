@@ -39,12 +39,36 @@ leaderboard:
   - id: 2
     schema:
       {
-        "labels": ["AP50", "AP75", "APall"],
-        "default_order_by": "APall",
+        "labels": ["AP_all", "AP50", "AP75","APs","APm","APl","Recall_s","Recall_m","Recall_l","Recall_all"],
+        "default_order_by": "AP_all",
         "metadata": {
-          "APall": {
+          "Recall_all": {
             "sort_ascending": True,
-            "description": "APall",
+            "description": "Recall_all",
+          },
+          "Recall_l": {
+            "sort_ascending": True,
+            "description": "Recall_l",
+          },
+          "Recall_m": {
+            "sort_ascending": True,
+            "description": "Recall_m",
+          },
+          "Recall_s": {
+            "sort_ascending": True,
+            "description": "Recall_s",
+          },
+          "APl": {
+            "sort_ascending": True,
+            "description": "APl",
+          },
+          "APm": {
+            "sort_ascending": True,
+            "description": "APm",
+          },
+          "APs": {
+            "sort_ascending": True,
+            "description": "APs",
           },
           "AP75": {
             "sort_ascending": True,
@@ -53,6 +77,10 @@ leaderboard:
           "AP50": {
             "sort_ascending": True,
             "description": "AP50",
+          },          
+          "AP_all": {
+            "sort_ascending": True,
+            "description": "AP_all",
           }
         }
       }
