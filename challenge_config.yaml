@@ -80,6 +80,7 @@ challenge_phases:
         is_visible: True
     submission_meta_attributes:
       - name: Track
+        description: Sample
         type: radio
         options: ["Supervised", "OVD"]
         required: True
