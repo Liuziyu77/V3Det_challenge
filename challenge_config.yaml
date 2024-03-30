@@ -22,17 +22,17 @@ leaderboard:
         "labels": ["bAP", "nAP", "AP"],
         "default_order_by": "AP",
         "metadata": {
-          "bAP": {
+          "AP": {
             "sort_ascending": True,
-            "description": "bAP",
+            "description": "AP",
           },
           "nAP": {
             "sort_ascending": True,
             "description": "nAP",
           },
-          "AP": {
+          "bAP": {
             "sort_ascending": True,
-            "description": "AP",
+            "description": "bAP",
           }
         }
       }
