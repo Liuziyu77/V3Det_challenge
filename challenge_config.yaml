@@ -19,7 +19,7 @@ leaderboard:
   - id: 1
     schema:
       {
-        "labels": ["bAP50", "nAP50","bAP", "nAP", "AP"],
+        "labels": ["bAP50", "nAP50","bAP75", "nAP75","bAP", "nAP", "AP"],
         "default_order_by": "AP",
         "metadata": {
           "AP": {
@@ -33,6 +33,14 @@ leaderboard:
           "bAP": {
             "sort_ascending": True,
             "description": "bAP",
+          },
+          "nAP75": {
+            "sort_ascending": True,
+            "description": "nAP75",
+          },
+          "bAP75": {
+            "sort_ascending": True,
+            "description": "bAP75",
           },
           "nAP50": {
             "sort_ascending": True,
