@@ -113,8 +113,8 @@ challenge_phases:
     test_annotation_file: annotations/v3det_2023_v1_val.json
     codename: dev
     max_submissions_per_day: 2
-    max_submissions_per_month: 10
-    max_submissions: 20
+    max_submissions_per_month: 5
+    max_submissions: 10
     default_submission_meta_attributes:
       - name: method_description
         is_visible: True
@@ -158,8 +158,8 @@ challenge_phases:
     test_annotation_file: annotations/test_annotations_testsplit.json
     codename: test
     max_submissions_per_day: 2
-    max_submissions_per_month: 10
-    max_submissions: 20
+    max_submissions_per_month: 5
+    max_submissions: 10
     default_submission_meta_attributes:
       - name: method_name
         is_visible: True
