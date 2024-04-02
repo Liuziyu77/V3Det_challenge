@@ -2,10 +2,17 @@
 <p>😊<a href="https://v3det.openxlab.org.cn/">Dataset</a>|💻<a href="https://github.com/V3Det">Github</a>|📖<a href="https://arxiv.org/pdf/2304.03752.pdf">Paper</a>|📄<a href="https://arxiv.org/abs/2304.03752">arXiv</a></p>
 
 <div id="countdown">
-        <p style="font-family: 'Arial', sans-serif; font-size: 20px; color: blue; display: inline-block; margin: 0;">
+        <p style="font-family: 'Arial', sans-serif; color: skyblue; display: inline-block; margin: 0;">
           Countdown to Development Phase:
         </p>
         <div id="timer" style="display: inline-block;"></div>
+</div>
+
+<div id="countdown1">
+        <p style="font-family: 'Arial', sans-serif; color: skyblue; display: inline-block; margin: 0;">
+          Countdown to Technical Report Submission:
+        </p>
+        <div id="timer1" style="display: inline-block;"></div>
 </div>
 
 <script>
@@ -38,6 +45,35 @@
         }, 1000);
 </script>
 
+<script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Jun 8, 2024 14:59:59").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+            // Get today's date and time
+            var now = new Date().getTime();
+            
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+            
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Output the result in an element with id="timer1"
+            document.getElementById("timer1").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+            
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer1").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+</script>
 
 
 <p>This challenge offers participants an automated submission and evaluation system, along with a leaderboard, to submit your model's test results on the test set.</p>
