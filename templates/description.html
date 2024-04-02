@@ -1,6 +1,38 @@
 <h3>V3Det: Vast Vocabulary Visual Detection Dataset</h3>
 <p>😊<a href="https://v3det.openxlab.org.cn/">Dataset</a>|💻<a href="https://github.com/V3Det">Github</a>|📖<a href="https://arxiv.org/pdf/2304.03752.pdf">Paper</a>|📄<a href="https://arxiv.org/abs/2304.03752">arXiv</a></p>
 
+<script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Dec 31, 2024 12:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+            // Get today's date and time
+            var now = new Date().getTime();
+            
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+            
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Output the result in an element with id="timer"
+            document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+            
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+</script>
+
+
+
 <p>This challenge offers participants an automated submission and evaluation system, along with a leaderboard, to submit your model's test results on the test set.</p>
 
 <h4>Competition Introduction</h4>
