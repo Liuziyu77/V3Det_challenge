@@ -11,7 +11,7 @@ leaderboard_description: Explore the frontiers of object detection in the V3Det 
 evaluation_script: evaluation_script.zip
 remote_evaluation: True
 is_docker_based: False
-start_date: 2024-03-31 08:00:00
+start_date: 2024-04-3 07:00:00
 end_date: 2024-06-2 6:59:59
 published: True
 
