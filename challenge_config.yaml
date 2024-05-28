@@ -12,7 +12,7 @@ evaluation_script: evaluation_script.zip
 remote_evaluation: True
 is_docker_based: False
 start_date: 2024-04-3 07:00:00
-end_date: 2024-06-10 6:59:59
+end_date: 2024-06-16 6:59:59
 published: True
 
 leaderboard:
@@ -109,7 +109,7 @@ challenge_phases:
     is_public: True
     is_submission_public: True
     start_date: 2024-04-1 07:00:00
-    end_date: 2024-06-4 6:59:59
+    end_date: 2024-06-10 6:59:59
     test_annotation_file: annotations/v3det_2023_v1_val.json
     codename: dev
     max_submissions_per_day: 2
@@ -154,7 +154,7 @@ challenge_phases:
     is_public: True
     is_submission_public: True
     start_date: 2024-6-4 7:00:00
-    end_date: 2024-06-10 6:59:59
+    end_date: 2024-06-16 6:59:59
     test_annotation_file: annotations/test_annotations_testsplit.json
     codename: test
     max_submissions_per_day: 2
